@@ -10,7 +10,7 @@ const prependRule = [
   "DOMAIN-SUFFIX,sciencedirect.com,DIRECT", // ScienceDirect
   "DOMAIN-SUFFIX,sciencedirectassets.com,DIRECT", // ScienceDirectPdf
   "DOMAIN-SUFFIX,springer.com,DIRECT",      // Springer
-  "DOMAIN-SUFFIX,science.org,DIRECT",        // science
+  "DOMAIN-SUFFIX,science.org,DIRECT",       // science
   "DOMAIN-SUFFIX,nature.com,DIRECT",        // Nature
   
   // 学术数据库
@@ -36,6 +36,5 @@ function main(config) {
   // 合并规则（旧规则追加到新规则后面）
   const oldRules = config.rules || [];
   config.rules = [...new Set([...prependRule, ...oldRules])]; // 使用Set去重
-  
   return config;
 }

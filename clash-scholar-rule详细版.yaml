@@ -1,0 +1,119 @@
+/**
+ * 需要前置的学术类直连规则（详细版）
+ * 格式说明：DOMAIN-SUFFIX,域名,DIRECT
+ * 说明：
+ * - 尽量只加入适合直连的学术/科研站点；
+ * - 个别站点（如 ResearchGate）在个别地区可能需要代理，可按需改写为代理组；
+ */
+const prependRule = [
+
+  // 综合学术出版 / 平台
+  "DOMAIN-SUFFIX,ieee.org,DIRECT",                     // IEEE Xplore
+  "DOMAIN-SUFFIX,acm.org,DIRECT",                      // ACM / DL
+  "DOMAIN-SUFFIX,dl.acm.org,DIRECT",                   // ACM DL
+  "DOMAIN-SUFFIX,elsevier.com,DIRECT",                 // Elsevier
+  "DOMAIN-SUFFIX,sciencedirect.com,DIRECT",            // ScienceDirect
+  "DOMAIN-SUFFIX,sciencedirectassets.com,DIRECT",      // ScienceDirect PDF/CDN
+  "DOMAIN-SUFFIX,cell.com,DIRECT",                     // Cell Press
+  "DOMAIN-SUFFIX,springer.com,DIRECT",                 // Springer
+  "DOMAIN-SUFFIX,link.springer.com,DIRECT",            // SpringerLink
+  "DOMAIN-SUFFIX,springernature.com,DIRECT",           // Springer Nature
+  "DOMAIN-SUFFIX,nature.com,DIRECT",                   // Nature
+  "DOMAIN-SUFFIX,natureasia.com,DIRECT",               // Nature Asia
+  "DOMAIN-SUFFIX,wiley.com,DIRECT",                    // Wiley
+  "DOMAIN-SUFFIX,onlinelibrary.wiley.com,DIRECT",      // Wiley Online Library
+  "DOMAIN-SUFFIX,tandfonline.com,DIRECT",              // Taylor & Francis Online
+  "DOMAIN-SUFFIX,taylorandfrancis.com,DIRECT",         // Taylor & Francis
+  "DOMAIN-SUFFIX,sagepub.com,DIRECT",                  // SAGE
+  "DOMAIN-SUFFIX,journals.sagepub.com,DIRECT",         // SAGE Journals
+  "DOMAIN-SUFFIX,oup.com,DIRECT",                      // Oxford University Press
+  "DOMAIN-SUFFIX,academic.oup.com,DIRECT",             // OUP Academic
+  "DOMAIN-SUFFIX,cambridge.org,DIRECT",                // Cambridge
+  "DOMAIN-SUFFIX,cambridgecore.org,DIRECT",            // Cambridge Core
+  "DOMAIN-SUFFIX,acs.org,DIRECT",                      // American Chemical Society
+  "DOMAIN-SUFFIX,pubs.acs.org,DIRECT",                 // ACS Publications
+  "DOMAIN-SUFFIX,rsc.org,DIRECT",                      // Royal Society of Chemistry
+  "DOMAIN-SUFFIX,pubs.rsc.org,DIRECT",                 // RSC Publishing
+  "DOMAIN-SUFFIX,pnas.org,DIRECT",                     // PNAS
+  "DOMAIN-SUFFIX,plos.org,DIRECT",                     // PLOS
+  "DOMAIN-SUFFIX,jamanetwork.com,DIRECT",              // JAMA
+  "DOMAIN-SUFFIX,bmj.com,DIRECT",                      // BMJ
+  "DOMAIN-SUFFIX,nejm.org,DIRECT",                     // NEJM
+  "DOMAIN-SUFFIX,lancet.com,DIRECT",                   // The Lancet
+  "DOMAIN-SUFFIX,science.org,DIRECT",                  // Science (AAAS)
+  "DOMAIN-SUFFIX,sciencemag.org,DIRECT",               // Science 旧域
+  "DOMAIN-SUFFIX,iop.org,DIRECT",                      // IOP
+  "DOMAIN-SUFFIX,iopscience.iop.org,DIRECT",           // IOPscience
+  "DOMAIN-SUFFIX,aip.org,DIRECT",                      // AIP
+  "DOMAIN-SUFFIX,scitation.org,DIRECT",                // AIP/Scitation
+  "DOMAIN-SUFFIX,ascelibrary.org,DIRECT",              // ASCE Library
+  "DOMAIN-SUFFIX,liebertpub.com,DIRECT",               // Mary Ann Liebert
+  "DOMAIN-SUFFIX,muse.jhu.edu,DIRECT",                 // Project MUSE
+  "DOMAIN-SUFFIX,royalsocietypublishing.org,DIRECT",   // Royal Society
+
+  // 学术数据库 / 索引
+  "DOMAIN-SUFFIX,clarivate.com,DIRECT",                // Clarivate
+  "DOMAIN-SUFFIX,webofscience.com,DIRECT",             // Web of Science
+  "DOMAIN-SUFFIX,webofknowledge.com,DIRECT",           // Web of Knowledge
+  "DOMAIN-SUFFIX,scopus.com,DIRECT",                   // Scopus
+  "DOMAIN-SUFFIX,jstor.org,DIRECT",                    // JSTOR
+  "DOMAIN-SUFFIX,proquest.com,DIRECT",                 // ProQuest
+  "DOMAIN-SUFFIX,ebscohost.com,DIRECT",                // EBSCOhost
+
+  // 学术搜索 / 学术社交
+  "DOMAIN-SUFFIX,semanticscholar.org,DIRECT",          // Semantic Scholar
+  "DOMAIN-SUFFIX,researchgate.net,DIRECT",             // ResearchGate（如直连不可用，可考虑改为代理）
+  "DOMAIN-SUFFIX,academia.edu,DIRECT",                 // Academia.edu
+  "DOMAIN-SUFFIX,lens.org,DIRECT",                     // The Lens
+  "DOMAIN-SUFFIX,dimensions.ai,DIRECT",                // Dimensions
+  "DOMAIN-SUFFIX,scite.ai,DIRECT",                     // Scite
+  "DOMAIN-SUFFIX,xueshu.baidu.com,DIRECT",             // 百度学术
+
+  // 预印本 / 开放论文
+  "DOMAIN-SUFFIX,arxiv.org,DIRECT",                    // arXiv
+  "DOMAIN-SUFFIX,biorxiv.org,DIRECT",                  // bioRxiv
+  "DOMAIN-SUFFIX,medrxiv.org,DIRECT",                  // medRxiv
+  "DOMAIN-SUFFIX,preprints.org,DIRECT",                // MDPI Preprints
+  "DOMAIN-SUFFIX,researchsquare.com,DIRECT",           // Research Square
+  "DOMAIN-SUFFIX,ssrn.com,DIRECT",                     // SSRN
+  "DOMAIN-SUFFIX,hal.science,DIRECT",                  // HAL
+
+  // DOI / 元数据 / 开放索引
+  "DOMAIN-SUFFIX,doi.org,DIRECT",                      // DOI
+  "DOMAIN-SUFFIX,dx.doi.org,DIRECT",                   // DOI 旧域
+  "DOMAIN-SUFFIX,shortdoi.org,DIRECT",                 // 短 DOI
+  "DOMAIN-SUFFIX,crossref.org,DIRECT",                 // Crossref
+  "DOMAIN-SUFFIX,datacite.org,DIRECT",                 // DataCite
+  "DOMAIN-SUFFIX,openalex.org,DIRECT",                 // OpenAlex
+  "DOMAIN-SUFFIX,doaj.org,DIRECT",                     // DOAJ
+  "DOMAIN-SUFFIX,core.ac.uk,DIRECT",                   // CORE
+
+  // 机构与科研人员标识
+  "DOMAIN-SUFFIX,orcid.org,DIRECT",                    // ORCID
+  "DOMAIN-SUFFIX,publons.com,DIRECT",                  // Publons
+
+  // 医学与生命科学相关门户
+  "DOMAIN-SUFFIX,ncbi.nlm.nih.gov,DIRECT",             // NCBI 主站
+  "DOMAIN-SUFFIX,pmc.ncbi.nlm.nih.gov,DIRECT",         // PubMed Central
+  "DOMAIN-SUFFIX,pubmed.ncbi.nlm.nih.gov,DIRECT",      // PubMed（细化保留）
+  "DOMAIN-SUFFIX,nih.gov,DIRECT",                      // NIH（广义直连）
+
+  // 数据仓库 / 开放科学
+  "DOMAIN-SUFFIX,zenodo.org,DIRECT",                   // Zenodo
+  "DOMAIN-SUFFIX,figshare.com,DIRECT",                 // Figshare
+  "DOMAIN-SUFFIX,osf.io,DIRECT",                       // OSF
+  "DOMAIN-SUFFIX,dryad.org,DIRECT",                    // Dryad
+
+  // 中国地区学术资源
+  "DOMAIN-SUFFIX,cnki.net,DIRECT",                     // 中国知网
+  "DOMAIN-SUFFIX,wanfangdata.com.cn,DIRECT",           // 万方数据
+  "DOMAIN-SUFFIX,cqvip.com,DIRECT",                    // 维普网
+  "DOMAIN-SUFFIX,airitilibrary.com,DIRECT"             // 华艺线上图书馆（台湾）
+];
+
+function main(config) {
+  // 合并规则（旧规则追加到新规则后面），Set 去重防止重复
+  const oldRules = config.rules || [];
+  config.rules = [...new Set([...prependRule, ...oldRules])];
+  return config;
+}
